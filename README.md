@@ -1,2 +1,2 @@
-# yet-another-music-bot
-yet another discord bot to play music
+# Amethyst
+A beautiful discord music bot
