@@ -1,0 +1,26 @@
+{
+  "name": "amethyst",
+  "version": "0.1.0",
+  "description": "A beautiful discord music bot",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy-commands": "node src/deploy-commands.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imagineeeinc/Amethyst.git"
+  },
+  "author": "imagineeeinc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imagineeeinc/Amethyst/issues"
+  },
+  "homepage": "https://github.com/imagineeeinc/Amethyst#readme",
+  "dependencies": {
+    "@discordjs/opus": "^0.5.3",
+    "@discordjs/rest": "^0.4.1",
+    "discord-api-types": "^0.32.1",
+    "discord-player": "^5.2.2",
+    "discord.js": "^13.7.0"
+  }
+}
