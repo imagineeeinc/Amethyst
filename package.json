@@ -1,7 +1,7 @@
 {
   "name": "amethyst",
   "version": "0.1.0",
-  "description": "A beautiful discord music bot",
+  "description": "A beautiful discord bot",
   "main": "src/index.js",
   "scripts": {
     "start": "npm run deploy-commands && node src/index.js",
