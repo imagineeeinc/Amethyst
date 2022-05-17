@@ -1,4 +1,13 @@
-const { token, clientId } = require('../config.json')
+var token
+var clientId
+try {
+	var { token, clientId } = require('../config.json')
+} catch (error) {
+	console.error('Missing token or clientId in config.json');
+	token = process.env.TOKEN;
+	clientId = process.env.CLIENT_ID;
+}
+
 // Require the necessary discord.js classes
 const { Client, Collection, Intents } = require('discord.js');
 const fs = require('node:fs');

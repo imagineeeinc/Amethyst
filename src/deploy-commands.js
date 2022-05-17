@@ -1,6 +1,14 @@
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
-const { clientId, token, guild } = require('../config.json');
+var token
+var clientId
+try {
+	var { token, clientId } = require('../config.json')
+} catch (error) {
+	console.error('Missing token or clientId in config.json');
+	token = process.env.TOKEN;
+	clientId = process.env.CLIENT_ID;
+}
 const fs = require('node:fs');
 const path = require('node:path');
 
