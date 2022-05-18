@@ -10,10 +10,12 @@ module.exports = {
 
 		if (!queue || !queue.playing) return interaction.channel.send(`No music currently playing... try again ? ❌`);
 
-		if (!queue.tracks[0]) return interaction.channel.send(`No music in the queue after the current one... try again ? ❌`);
+		//if (!queue.tracks[0]) return interaction.channel.send(`No music in the queue after the current one... try again ? ❌`);
 
+		queue.stop();
 		await queue.clear();
 
-		interaction.channel.send(`The queue has just been cleared 🗑️`);
+
+		interaction.reply(`The queue has just been cleared 🗑️`);
 	},
 };

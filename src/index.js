@@ -7,7 +7,6 @@ try {
 	token = process.env.TOKEN;
 	clientId = process.env.CLIENT_ID;
 }
-
 // Require the necessary discord.js classes
 const { Client, Collection, Intents } = require('discord.js');
 const fs = require('node:fs');
@@ -49,7 +48,7 @@ client.once('ready', () => {
 				'Songs from amethyst',
 				type: 'LISTENING'
 			}],
-		status: 'idle'
+		status: 'online'
 	});
 });
 
@@ -63,7 +62,7 @@ client.on('interactionCreate', async interaction => {
 	if (!command) return;
 
 	try {
-		await command.execute(interaction, player);
+		await command.execute(interaction, player, client);
 	} catch (error) {
 		console.error(error);
 		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
@@ -73,3 +72,10 @@ client.on('interactionCreate', async interaction => {
 client.on('guildCreate', async guild => {
 	console.log(`Joined guild: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
 });
+
+//simple server to keep the bot online
+var http = require('http');
+var server = http.createServer(function (req, res) {
+	res.end("Hi from amethyst")
+});
+server.listen(process.env.PORT || 8000);

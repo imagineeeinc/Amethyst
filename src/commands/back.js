@@ -7,10 +7,10 @@ module.exports = {
 	.setDescription('Previous song'),
 	async execute(interaction, player) {
 		const queue = player.getQueue(message.guild.id);
-		if (!queue || !queue.playing) return interaction.channel.send(`No music currently playing... try again ? ❌`);
-		if (!queue.previousTracks[1]) return interaction.channel.send(`There was no music played before... try again ? ❌`);
+		if (!queue || !queue.playing) return interaction.reply(`No music currently playing... try again ? ❌`);
+		if (!queue.previousTracks[1]) return interaction.reply(`There was no music played before... try again ? ❌`);
 		await queue.back();
 
-		interaction.channel.send(`Playing the **previous** track ✅`);
+		interaction.reply(`Playing the **previous** track ✅`);
 	},
 };

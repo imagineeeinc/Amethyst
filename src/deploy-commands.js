@@ -2,12 +2,14 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 var token
 var clientId
+var guild
 try {
-	var { token, clientId } = require('../config.json')
+	var { token, clientId, guild } = require('../config.json')
 } catch (error) {
 	console.error('Missing token or clientId in config.json');
 	token = process.env.TOKEN;
 	clientId = process.env.CLIENT_ID;
+	guild = process.env.GUILD;
 }
 const fs = require('node:fs');
 const path = require('node:path');
@@ -28,6 +30,15 @@ const rest = new REST({ version: '9' }).setToken(token);
 	try {
 		console.log('Started refreshing application (/) commands.');
 		if (guild) {
+			rest.get(Routes.applicationGuildCommands(clientId, guild))
+			.then(data => {
+					const promises = [];
+					for (const command of data) {
+							const deleteUrl = `${Routes.applicationGuildCommands(clientId, guild)}/${command.id}`;
+							promises.push(rest.delete(deleteUrl));
+					}
+					return Promise.all(promises);
+			});
 			await rest.put(
 				Routes.applicationGuildCommands(clientId, guild),
 				/* Routes.applicationCommands(clientId), */
