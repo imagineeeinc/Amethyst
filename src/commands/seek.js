@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-
+const ms = require('ms');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -11,14 +11,12 @@ module.exports = {
 			.setRequired(true)),
 	async execute(interaction, player) {
 		const queue = player.getQueue(interaction.guild.id);
-		if (!queue || !queue.playing) return interaction.reply(`No music currently playing... try again ? ❌`);
-		if (!queue.current) return interaction.reply(`No music currently playing... try again ? ❌`);
-		if (!queue.current.stream) return interaction.reply(`No music currently playing... try again ? ❌`);
-		if (!queue.current.stream.seekable) return interaction.reply(`The current track is not seekable... try again ? ❌`);
-		const time = interaction.options.getString('time');
+		if (!queue || !queue.playing) return message.channel.send(`No music currently playing... try again ? ❌`);
+		let time = interaction.options.getString('time');
 		if (!time) return interaction.reply(`Please provide a time to seek to... try again ? ❌`);
-		const seek = queue.current.stream.seek(time);
+		timeTo = ms(time)*1000;
+		const seek = queue.seek(timeTo);
 		if (!seek) return interaction.reply(`Something went wrong... try again ? ❌`);
-		interaction.reply(`Seeking to ${time}... ✅`);
+		interaction.reply(`Seeking to ${ms(time, { long: true })}s... ✅`);
 	},
 };
