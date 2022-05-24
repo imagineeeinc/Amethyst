@@ -11,13 +11,13 @@ module.exports = {
 			.setRequired(true)),
 	async execute(interaction, player) {
 		const queue = player.getQueue(interaction.guild.id);
-		if (!queue || !queue.playing) return interaction.channel.send(`No music currently playing... try again ? ❌`);
+		if (!queue || !queue.playing) return interaction.reply(`No music currently playing... try again ? ❌`);
 		const vol = parseInt(interaction.options.getString('volume'));
-		if (!vol) return interaction.channel.send(`The current volume is ${queue.volume} 🔊\n*To change the volume enter a valid number between **1** and **100**.*`);
-		if (queue.volume === vol) return interaction.channel.send(`The volume you want to change is already the current one... try again ? ❌`);
-		if (vol < 0 || vol > 100) return interaction.channel.send(`The specified number is not valid. Enter a number between **1** and **100**... try again ? ❌`);
+		if (!vol) return interaction.reply(`The current volume is ${queue.volume} 🔊\n*To change the volume enter a valid number between **1** and **100**.*`);
+		if (queue.volume === vol) return interaction.reply(`The volume you want to change is already the current one... try again ? ❌`);
+		if (vol < 0 || vol > 100) return interaction.reply(`The specified number is not valid. Enter a number between **1** and **100**... try again ? ❌`);
 		const success = queue.setVolume(vol);
 
-		return interaction.channel.send(success ? `The volume has been modified to **${vol}**/**100**% 🔊` : `Something went wrong... try again ? ❌`);
+		return interaction.reply(success ? `The volume has been modified to **${vol}**/**100**% 🔊` : `Something went wrong... try again ? ❌`);
 	},
 };
