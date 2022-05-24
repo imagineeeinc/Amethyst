@@ -39,13 +39,13 @@ module.exports = {
 			if (index > 0) {
 				await player.search(list[index], {
 					requestedBy: interaction.user
-				}).then(x => x.tracks[0]).then(track => {
+				}).then(x => x.tracks[0]).then(async track => {
+					await interaction.channel.send({ content: `⏱️ | Adding track **${track.title}** to queue!` })
 					tracks.push(track)
 				})
 			}
 		}
 		queue.addTracks(tracks)
-
-		return await interaction.followUp({ content: `⏱️ | Adding track **${track.title}** to queue!` });
+		return await interaction.followUp({ content: `✅ | Added ${tracks.length+1} tracks to queue!` });
 	},
 };
