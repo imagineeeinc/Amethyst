@@ -12,8 +12,12 @@ module.exports = {
 
 		const methods = ['disabled', 'track', 'queue'];
 
+		const progress = queue.createProgressBar();
 		const timestamp = queue.getPlayerTimestamp();
-		const trackDuration = timestamp.progress == 'Infinity' ? 'infinity (live)' : track.duration;
-		interaction.reply(`Track ${track.title}\nAuthor ${track.author}\nVolume **${queue.volume}**%\nDuration **${trackDuration}**\nURL ${track.url}\nLoop mode **${methods[queue.repeatMode]}**\nRequested by ${track.requestedBy}`);
+		if (timestamp.progress == 'Infinity') {
+			progress = 'Live 🔴'
+		};
+
+		interaction.reply(`Track ${track.title}\nAuthor ${track.author}\nVolume **${queue.volume}**%\nProgress ${progress} (**${timestamp.progress}**%)\nURL ${track.url}\nLoop mode **${methods[queue.repeatMode]}**\nRequested by ${track.requestedBy}`);
 	},
 };

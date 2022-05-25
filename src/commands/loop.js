@@ -13,8 +13,8 @@ module.exports = {
 		const queue = player.getQueue(interaction.guild.id);
 		if (!queue) return interaction.reply(`No music currently playing... try again ? ❌`);
 		const loop = interaction.options.getString("loop");
-		const success = queue.setRepeatMode(loop === 'true' ? QueueRepeatMode.TRACK : loop === 'queue' ? QueueRepeatMode.QUEUE : QueueRepeatMode.OFF);
-		let theLoop = loop === 'true' ? `Current track **${queue.current.title}** being looped` : loop === 'queue' ? 'Current queue being looped' : 'Looping disabled'
+		const success = queue.setRepeatMode(loop === 'track' ? QueueRepeatMode.TRACK : loop === 'queue' ? QueueRepeatMode.QUEUE : QueueRepeatMode.OFF);
+		let theLoop = loop === 'track' ? `Current track **${queue.current.title}** being looped` : loop === 'queue' ? 'Current queue being looped' : 'Looping disabled'
 
 		return interaction.reply(success ? `${theLoop} ✅` : `Something went wrong... try again ? ❌`);
 	},
