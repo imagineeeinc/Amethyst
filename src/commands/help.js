@@ -6,7 +6,7 @@ module.exports = {
 	.setName('help')
 	.setDescription('Help and command usage'),
 	async execute(interaction, player) {
-		return interaction.reply(`Amethyst, a beautiful music bot for discord.
+		return interaction.reply({ content: `Amethyst, a beautiful music bot for discord.
 
 Command usage:
 **/play**: Plays a song *[song](url or search term)*
@@ -21,6 +21,7 @@ Command usage:
 **/stop**: stops the current song
 **/loop**: sets the current song or queue to loop *[loop](track/ queue/ false)*
 **/back**: goes back to the previous song
-**/playlist**: shows the current playlist *[playlist](The playlist to play, with search term(or urls) seperated by commas)*`);
+**/playlist**: shows the current playlist *[playlist](The playlist to play, with search term(or urls) seperated by commas)*`,
+ephemeral: true});
 	},
 };
