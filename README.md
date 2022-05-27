@@ -8,7 +8,8 @@ Amethyst is meant to be a clean beautiful music bot for discord, built around th
 
 Amethyst is also open source so you can host your own versions of it.
 
-## Adding the community version to your server
+<h2 align="center">Adding the community version to your server</h2>
+
 Adding the already deployed version to your server. Is simple as 1,2,3,4,5
 1. click the bot adding link: [here](https://discord.com/api/oauth2/authorize?client_id=974030969256411157&permissions=397317107024&scope=bot%20applications.commands)
 2. Choose the server to add to
@@ -22,7 +23,8 @@ Adding the already deployed version to your server. Is simple as 1,2,3,4,5
 - Slower on average (depends on the distance between hot servers and discord servers)
 
 It is recommended to deploy your own unless you are not a developer.
-## Deploying your own instance
+<h2 align="center">Deploying your own instance</h2>
+
 Deploying your own bot instance is simple as hosting it on any cloud provider.
 
 ### Prerequisites
@@ -55,5 +57,8 @@ To deploy commands and run the bot in one command, run: `npm start`
 ### Deploying Using Docker
 There is a Docker file provided, so just build the image and run the container in the root of the project, provide ENV Variables(or use the [env alternative](#env-alternative)) and it should work.
 
-## License
+<h2 align="center">License</h2>
+
 This bot is under [TCI](https://github.com/imagineeeinc/Amethyst/blob/main/LICENSE) License.
+
+<h6 align="center">Made with Love </h6>
