@@ -61,4 +61,4 @@ There is a Docker file provided, so just build the image and run the container i
 
 This bot is under [TCI](https://github.com/imagineeeinc/Amethyst/blob/main/LICENSE) License.
 
-<h6 align="center">Made with Love </h6>
+<h6 align="center">Made with ❤ by <a href="https://imagineee.web.app">Imagineee</a></h6>
