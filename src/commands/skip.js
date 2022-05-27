@@ -10,6 +10,6 @@ module.exports = {
 		if (!queue || !queue.playing) return interaction.reply(`No music currently playing... try again ? ❌`);
 		const success = queue.skip();
 
-		return interaction.reply(success ? `skipped ${queue.current.title} skipped ✅` : `Something went wrong... try again ? ❌`);
+		return interaction.reply(success ? `skipped **${queue.current.title}** skipped ✅` : `Something went wrong... try again ? ❌`);
 	},
 };

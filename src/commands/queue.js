@@ -17,6 +17,6 @@ module.exports = {
 		const songs = queue.tracks.length;
 		const nextSongs = songs > 5 ? `And **${songs - 5}** other song(s)...` : `In the playlist **${songs}** song(s)...`;
 
-		interaction.reply(`Current ${queue.current.title}\n\n${tracks.slice(0, 5).join('\n')}\n\n${nextSongs}`);
+		interaction.reply(`Current **${queue.current.title}**\n\n${tracks.slice(0, 5).join('\n')}\n\n${nextSongs}`);
 	},
 };

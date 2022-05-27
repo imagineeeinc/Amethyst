@@ -5,14 +5,14 @@
   "main": "src/index.js",
   "scripts": {
     "start": "npm run deploy-commands && node src/index.js",
-    "deploy-commands": "node src/deploy-commands.js"
+    "deploy-commands": "node src/deploy-commands.js",
+    "bot": "node src/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/imagineeeinc/Amethyst.git"
   },
   "author": "imagineeeinc",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/imagineeeinc/Amethyst/issues"
   },

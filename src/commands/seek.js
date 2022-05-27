@@ -23,6 +23,6 @@ module.exports = {
 		console.log(timeTo);
 		const seek = queue.seek(timeTo);
 		if (!seek) return interaction.reply(`Something went wrong... try again ? ❌`);
-		interaction.reply(`Seeking to ${min}:${sec} ✅`);
+		interaction.reply(`Seeking to **${min}:${sec}** ✅`);
 	},
 };

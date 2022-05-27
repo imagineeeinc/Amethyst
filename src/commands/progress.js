@@ -13,6 +13,6 @@ module.exports = {
 		const timestamp = queue.getPlayerTimestamp();
 		if (timestamp.progress == 'Infinity') return interaction.reply(`Playing a live, no data to display 🎧`);
 
-		interaction.reply(`${progress} (**${timestamp.progress}**%)`);
+		interaction.reply(`**${track.title}**\n${progress} (**${timestamp.progress}**%)`);
 	},
 };

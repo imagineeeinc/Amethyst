@@ -22,7 +22,6 @@ const player = new Player(client);
 // add the trackStart event so when a song will be played this message will be sent
 player.on("trackStart", (queue, track) => queue.metadata.channel.send(`🎶 | Now playing **${track.title}**!`))
 
-
 client.commands = new Collection();
 
 var commandsPath = path.join(__dirname, 'commands')

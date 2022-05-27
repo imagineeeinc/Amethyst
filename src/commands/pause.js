@@ -12,6 +12,6 @@ module.exports = {
 
 		const success = queue.setPaused(true);
 
-		return interaction.reply(success ? `Current music ${queue.current.title} paused ✅` : `Something went wrong... try again ? ❌`);
+		return interaction.reply(success ? `Current music **${queue.current.title}** paused ✅` : `Something went wrong... try again ? ❌`);
 	},
 };
