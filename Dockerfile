@@ -2,7 +2,7 @@ FROM node:16
 
 WORKDIR /
 
-COPY index.js ./
+COPY ./ ./
 
 RUN apt install gcc
 
