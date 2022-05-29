@@ -59,6 +59,13 @@ There is a Docker file provided, so just build the image and run the container i
 
 <h2 align="center">License</h2>
 
-This bot is under [TCI](https://github.com/imagineeeinc/Amethyst/blob/main/LICENSE) License.
+This bot/ project is under [TCI](https://github.com/imagineeeinc/Amethyst/blob/main/LICENSE) License.
 
-<h6 align="center">Made with ❤ by <a href="https://imagineee.web.app">Imagineee</a></h6>
+<br>
+<br>
+<br>
+<p align="center">
+	<a href="https://imagineee.web.app/">
+  		<img src="https://imagineeeinc.github.io/made-with-love-by-imagineee/made-with-love-lavender.svg" alt="Made with love by imagineee" height="64px">
+	</a>
+</p>
