@@ -20,7 +20,7 @@ Adding the already deployed version to your server. Is simple as 1,2,3,4,5
 ### Downside to using community version
 - Sometime shutdowns for maintenance, testing and upgrading
 - not always up to date
-- Slower on average (depends on the distance between hot servers and discord servers)
+- Slower on average (depends on the distance between host servers and discord servers)
 
 It is recommended to deploy your own unless you are not a developer.
 <h2 align="center">Deploying your own instance</h2>
