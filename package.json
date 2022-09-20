@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/imagineeeinc/Amethyst#readme",
   "dependencies": {
-    "@discordjs/opus": "^0.5.3",
+    "@discordjs/opus": "^0.8.0",
     "@discordjs/rest": "^0.4.1",
     "discord-api-types": "^0.32.1",
     "discord-player": "^5.2.2",
