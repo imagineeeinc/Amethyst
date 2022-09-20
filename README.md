@@ -4,7 +4,7 @@
 <h1 align="center">Amethyst</h1>
 <h3 align="center">A beautiful discord music bot</h3>
 
-Amethyst is meant to be a clean beautiful music bot for discord, built around the ideas of simplicity and ease of use.
+Amethyst is a clean beautiful music bot for discord, built around the ideas of simplicity and ease of use.
 
 Amethyst is also open source so you can host your own versions of it.
 
