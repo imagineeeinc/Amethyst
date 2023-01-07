@@ -1,12 +1,13 @@
-FROM node:16
+FROM node:16-alpine
 
 WORKDIR /
 
 COPY ./ ./
 
-RUN apt update
-RUN apt install ffmpeg
-RUN apt install gcc
+pk update
+RUN apk add
+RUN apk add ffmpeg
+RUN apk add gcc
 
 RUN npm install
 
