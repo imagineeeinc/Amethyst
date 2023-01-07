@@ -4,11 +4,8 @@ WORKDIR /
 
 COPY ./ ./
 
-RUN apk update
-RUN apk add
-RUN apk add ffmpeg
-#RUN apk add gcc
-#RUN apk add python3
+RUN apt update
+RUN apt install ffmpeg
 
 RUN npm install
 
