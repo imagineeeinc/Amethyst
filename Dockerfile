@@ -4,7 +4,7 @@ WORKDIR /
 
 COPY ./ ./
 
-pk update
+RUN apk update
 RUN apk add
 RUN apk add ffmpeg
 RUN apk add gcc
